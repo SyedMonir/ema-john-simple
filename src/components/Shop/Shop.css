@@ -12,16 +12,43 @@
 }
 
 .cart-container {
-    background-color: orange;
+    background-color: #ffe0b3;
     max-height: 100vh;
+    padding: 20px;
     position: sticky;
     top: 0;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.cart-container h5 {
+    text-align: center;
+    font-size: 25px;
+    line-height: 30px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    color: #1C2B35;
+}
+
+.cart-container p {
+    font-size: 17px;
+    line-height: 20px;
+    letter-spacing: 0.005em;
+    margin-bottom: 25px;
+}
+
+.cart-container h6 {
+    font-size: 21px;
+    line-height: 25px;
+    letter-spacing: 0.0015em;
+    color: #0E161A;
 }
 
 @media screen and (max-width:500px) {
     .shop-container {
         grid-template-columns: 1fr 1fr;
     }
+
     .products-container {
         grid-template-columns: 1fr;
     }
