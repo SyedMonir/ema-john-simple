@@ -6,10 +6,11 @@ import './Product.css';
 
 const Product = ({ product, handleAddToCart }) => {
   const { img, name, price, ratings, ratingsCount, seller } = product;
-  // if(name.length > 20){
-  //   const newName = name.slice(0,20);
-  //   console.log(newName);
-  // }
+  if(name.length > 20){
+    // name = name.slice(0,20);
+    // console.log(newName);
+  }
+  // name.length > 15 ? (name + '...') :
   return (
     <div className="product">
       <Card>
