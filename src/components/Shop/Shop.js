@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import useCart from '../../hooks/useCart';
 import useProducts from '../../hooks/useProducts';
 import { addToDb } from '../../utilities/fakedb';
@@ -12,6 +12,9 @@ const Shop = () => {
 
   // For Cart
   const [cart, setCart] = useCart(products);
+
+  // For navigate
+  const navigate = useNavigate();
 
   // Add to cart button
   const handleAddToCart = (selectedProduct) => {
@@ -42,9 +45,13 @@ const Shop = () => {
       </section>
       <section className="cart-container">
         <Cart cart={cart}>
-          <Link to={'/orders'}>
-            <button>Review Order</button>
-          </Link>
+          <button
+            onClick={() => {
+              navigate('/orders');
+            }}
+          >
+            Review Order
+          </button>
         </Cart>
       </section>
     </section>
