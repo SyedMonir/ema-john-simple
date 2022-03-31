@@ -8,7 +8,6 @@ import './Shop.css';
 const Shop = () => {
   // Load Products
   const [products] = useProducts();
-  // console.log(products);
 
   // For Cart
   const [cart, setCart] = useCart(products);

@@ -23,6 +23,11 @@
     line-height: 25px;
     letter-spacing: 0.0015em;
     color: #0e161a;
+
+}
+
+.product .product-price span, .product .rating span, .product .cardFooter span {
+    color: orange;
 }
 
 .product h6 {

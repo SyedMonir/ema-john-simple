@@ -13,3 +13,8 @@
 .navbar-light .navbar-nav a:hover {
     color: orange;
 }
+
+.navbar-light .navbar-toggler-icon {
+    background-color: orange;
+    border-radius: 5px;
+}
