@@ -5,6 +5,11 @@
     margin: 10px;
     width: 570px;
     display: flex;
+    align-items: center;
+}
+
+.review-item figure {
+    margin: 0;
 }
 
 .review-item img {
@@ -23,12 +28,14 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
+    margin: 0 15px;
 }
 
 
 .button-container {
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 
@@ -44,4 +51,20 @@
 .delete-icon {
     color: #EB5757;
     font-size: 25px;
+}
+
+
+@media screen and (max-width:500px) {
+    .review-item {
+        width: 91%;
+        flex-direction: column;
+    }
+
+    .review-item img {
+        width: 100%;
+    }
+
+    .review-item-details-container {
+        flex-direction: column;
+    }
 }
