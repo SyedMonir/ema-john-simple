@@ -1,5 +1,17 @@
-# Ema John Simple
+# [Ema John Simple](https://ema-john-thesyed.netlify.app/)
 
-## Live Preview [🔗](https://ema-john-thesyed.netlify.app/).
+### Its an single-page e-commerce website.
 
-### Its an e-commerce website made with React, React-Bootstrap, React Router,
+## Tech Stack
+
+**Client:** React, React Router, React-Bootstrap
+
+## Features
+
+- Dynamic Products
+- Live previews
+- Full screen mode
+
+## Authors
+
+- [@Syed Monirul](https://www.linkedin.com/in/syed-monirul/)
