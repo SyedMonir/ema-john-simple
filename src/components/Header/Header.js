@@ -51,6 +51,14 @@ const Header = () => {
               >
                 About
               </NavLink>
+              <NavLink
+                to="/login"
+                className={({ isActive }) =>
+                  isActive ? 'active-route' : 'route'
+                }
+              >
+                Login
+              </NavLink>
             </Nav>
           </Navbar.Collapse>
         </Container>

@@ -7,7 +7,7 @@
     color: white;
     text-transform: uppercase;
     text-decoration: none;
-    margin-right: 20px;
+    /* margin-right: 20px; */
 }
 
 .navbar-light .navbar-nav a:hover {
@@ -23,6 +23,7 @@
     text-decoration: none;
     text-transform: uppercase;
     padding: 15px;
+    border-radius: 10px;
     transition: color 300ms;
     font-weight: 500;
     border-bottom: 3px solid transparent;
