@@ -26,15 +26,15 @@ const Login = () => {
     signInWithEmailAndPassword(email, password);
   };
 
-  if (user) {
-    navigate(from, { replace: true });
-  }
+  // if (user) {
+  //   navigate(from, { replace: true });
+  // }
 
-  // useEffect(() => {
-  //   if (user) {
-  //     navigate(from, { replace: true });
-  //   }
-  // }, [navigate, user, from]);
+  useEffect(() => {
+    if (user) {
+      navigate(from, { replace: true });
+    }
+  }, [navigate, user, from]);
 
   console.log(user);
   return (

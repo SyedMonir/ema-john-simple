@@ -5,6 +5,7 @@ import logo from '../../images/logo.svg';
 import { Link, NavLink } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
+import { signOut } from 'firebase/auth';
 
 const Header = () => {
   const [user] = useAuthState(auth);
@@ -55,7 +56,9 @@ const Header = () => {
                 About
               </NavLink>
               {user ? (
-                <button className="logout-btn">Logout</button>
+                <button onClick={() => signOut(auth)} className="logout-btn">
+                  Logout
+                </button>
               ) : (
                 <NavLink
                   to="/login"

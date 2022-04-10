@@ -29,8 +29,8 @@ const Orders = () => {
       </section>
       <section className="cart-container">
         <Cart cart={cart}>
-          <Link to={'/inventory'}>
-            <button>Processed Checkout</button>
+          <Link to={'/shipment'}>
+            <button>Processed Shipping</button>
           </Link>
         </Cart>
       </section>
