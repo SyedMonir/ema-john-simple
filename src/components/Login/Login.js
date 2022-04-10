@@ -1,23 +1,63 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { Link, useNavigate } from 'react-router-dom';
+import auth from '../../firebase.init';
 import './Login.css';
 
 const Login = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [signInWithEmailAndPassword, user, loading, error] =
+    useSignInWithEmailAndPassword(auth);
+  const navigate = useNavigate();
+  const handleEmailBlur = (event) => {
+    setEmail(event.target.value);
+  };
+  const handlePasswordBlur = (event) => {
+    setPassword(event.target.value);
+  };
+
+  const handleUserSignIn = (event) => {
+    event.preventDefault();
+    signInWithEmailAndPassword(email, password);
+  };
+
+  useEffect(() => {
+    if (user) {
+      navigate('/shop');
+    }
+  }, [navigate, user]);
+
+  console.log(user);
   return (
     <section className="form-container">
       <div>
         <h2 className="form-title">LOGIN</h2>
-        <form>
+        <h6>{loading && <p>Loading...</p>}</h6>
+        <form onSubmit={handleUserSignIn}>
           <div className="input-group">
             <label htmlFor="email">Email:</label>
-            <input type="email" name="email" id="email" required />
+            <input
+              onBlur={handleEmailBlur}
+              type="email"
+              name="email"
+              id="email"
+              required
+            />
           </div>
 
           <div className="input-group">
             <label htmlFor="password">Password</label>
-            <input type="password" name="password" id="password" required />
+            <input
+              onBlur={handlePasswordBlur}
+              type="password"
+              name="password"
+              id="password"
+              required
+            />
           </div>
 
+          {error?.message && <p className="text-danger">{error?.message}</p>}
           <input className="form-submit " type="submit" value="Login" />
         </form>
         <p className="text-center my-3">
