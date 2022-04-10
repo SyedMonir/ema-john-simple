@@ -19,7 +19,7 @@
     border-radius: 5px;
 }
 
-.active-route, .route {
+.active-route, .route, .logout-btn {
     text-decoration: none;
     text-transform: uppercase;
     padding: 15px;
@@ -30,11 +30,18 @@
     letter-spacing: .1rem;
 }
 
-.active-route, .route:hover {
+.active-route, .route:hover, .logout-btn:hover {
     color: orange !important;
     border-bottom: 3px solid orange;
 }
 
 .route {
     color: white;
+}
+
+.logout-btn {
+    background-color: transparent;
+    color: white;
+    border: 0;
+    border-bottom: 3px solid transparent;
 }

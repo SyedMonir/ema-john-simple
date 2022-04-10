@@ -3,8 +3,11 @@ import { Container, Nav, Navbar } from 'react-bootstrap';
 import './Header.css';
 import logo from '../../images/logo.svg';
 import { Link, NavLink } from 'react-router-dom';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
 
 const Header = () => {
+  const [user] = useAuthState(auth);
   return (
     <nav id="navbar">
       <Navbar expand="lg" className="p-0">
@@ -51,14 +54,18 @@ const Header = () => {
               >
                 About
               </NavLink>
-              <NavLink
-                to="/login"
-                className={({ isActive }) =>
-                  isActive ? 'active-route' : 'route'
-                }
-              >
-                Login
-              </NavLink>
+              {user ? (
+                <button className="logout-btn">Logout</button>
+              ) : (
+                <NavLink
+                  to="/login"
+                  className={({ isActive }) =>
+                    isActive ? 'active-route' : 'route'
+                  }
+                >
+                  Login
+                </NavLink>
+              )}
             </Nav>
           </Navbar.Collapse>
         </Container>
