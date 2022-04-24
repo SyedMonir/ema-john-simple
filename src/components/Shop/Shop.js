@@ -9,20 +9,20 @@ import './Shop.css';
 const Shop = () => {
   // Load Products
   const [products, setProducts] = useState([]);
+  const [pageCount, setPageCount] = useState(0);
+  const [page, setPage] = useState(0);
+  const [size, setSize] = useState(10);
+  // For Cart
+  const [cart, setCart] = useCart();
 
   useEffect(() => {
     fetch(`http://localhost:5000/products?page=${page}&size=${size}`)
       .then((response) => response.json())
       .then((data) => setProducts(data));
-  }, []);
-
-  // For Cart
-  const [cart, setCart] = useCart(products);
+  }, [page, size]);
 
   // Pagination
-  const [pageCount, setPageCount] = useState(0);
-  const [page, setPage] = useState(0);
-  const [size, setSize] = useState(10);
+
   useEffect(() => {
     fetch(`http://localhost:5000/productsCount`)
       .then((res) => res.json())
@@ -82,6 +82,7 @@ const Shop = () => {
       <div className="pagination">
         {[...Array(pageCount).keys()].map((number) => (
           <button
+            key={number + 1}
             className={page === number + 1 ? 'selected' : ''}
             onClick={() => setPage(number + 1)}
           >
@@ -89,10 +90,7 @@ const Shop = () => {
           </button>
         ))}
         <select onChange={(e) => setSize(e.target.value)}>
-          <option value="5">5</option>
-          <option value="10" selected>
-            10
-          </option>
+          <option defaultValue={10}>10</option>
           <option value="15">15</option>
           <option value="20">20</option>
         </select>

@@ -10,7 +10,7 @@ import { signOut } from 'firebase/auth';
 const Header = () => {
   const [user] = useAuthState(auth);
   return (
-    <nav id="navbar">
+    <nav id="navbar" className="sticky-top">
       <Navbar expand="lg" className="p-0">
         <Container>
           <Link className="" to="/">

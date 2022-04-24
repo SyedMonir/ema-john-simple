@@ -14,7 +14,7 @@ import Shipment from './components/Shipment/Shipment';
 
 function App() {
   return (
-    <div className="App">
+    <>
       <Header />
       <Routes>
         <Route path="/" element={<Shop />} />
@@ -41,7 +41,7 @@ function App() {
         <Route path="/signup" element={<SignUp />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
-    </div>
+    </>
   );
 }
 
