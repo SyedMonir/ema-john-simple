@@ -11,6 +11,21 @@
     margin: auto;
 }
 
+.pagination {
+    margin: 10px;
+}
+
+.pagination button {
+    margin-right: 10px;
+    background-color: white;
+    border: 1px solid orange;
+}
+
+.pagination .selected {
+    background-color: orange;
+    color: white;
+}
+
 .cart-container {
     background-color: #ffe0b3;
     height: 100vh;

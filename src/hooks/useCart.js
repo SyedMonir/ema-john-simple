@@ -10,7 +10,7 @@ const useCart = (products) => {
     const savedCart = [];
     for (const id in storedCart) {
       // Id ta storage er key ta hobe
-      const addedProduct = products.find((product) => product.id === id);
+      const addedProduct = products.find((product) => product._id === id);
       if (addedProduct) {
         const quantity = storedCart[id];
         // id diye key paisi taile object access korar moto kore sss[id] dile value ta pavo

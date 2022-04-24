@@ -1,5 +1,5 @@
 // use local storage to manage cart data
-const addToDb = (id) => {
+const addToDb = (_id) => {
   let shoppingCart = {};
 
   //get the shopping cart from local storage
@@ -9,15 +9,15 @@ const addToDb = (id) => {
   }
 
   // add quantity
-  const quantity = shoppingCart[id];
+  const quantity = shoppingCart[_id];
   if (quantity) {
     // jegula add hoise storage e setar quantity r sathe 1 jog
     const newQuantity = quantity + 1;
     // jog kore seta set kore dilam
-    shoppingCart[id] = newQuantity;
+    shoppingCart[_id] = newQuantity;
   } else {
     // Jodi quantity na thake taile 1 set kortesi
-    shoppingCart[id] = 1;
+    shoppingCart[_id] = 1;
   }
   // local storage e set kore dichhi
   localStorage.setItem('shopping-cart', JSON.stringify(shoppingCart));
@@ -34,12 +34,12 @@ const getStoredCart = () => {
   return shoppingCart;
 };
 
-const removeFromDb = (id) => {
+const removeFromDb = (_id) => {
   const storedCart = localStorage.getItem('shopping-cart');
   if (storedCart) {
     const shoppingCart = JSON.parse(storedCart);
-    if (id in shoppingCart) {
-      delete shoppingCart[id];
+    if (_id in shoppingCart) {
+      delete shoppingCart[_id];
       localStorage.setItem('shopping-cart', JSON.stringify(shoppingCart));
     }
   }
