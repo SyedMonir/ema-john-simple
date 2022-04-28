@@ -16,7 +16,9 @@ const Shop = () => {
   const [cart, setCart] = useCart();
 
   useEffect(() => {
-    fetch(`http://localhost:5000/products?page=${page}&size=${size}`)
+    fetch(
+      `https://vast-cove-97260.herokuapp.com/products?page=${page}&size=${size}`
+    )
       .then((response) => response.json())
       .then((data) => setProducts(data));
   }, [page, size]);
@@ -24,7 +26,7 @@ const Shop = () => {
   // Pagination
 
   useEffect(() => {
-    fetch(`http://localhost:5000/productsCount`)
+    fetch(`https://vast-cove-97260.herokuapp.com/productsCount`)
       .then((res) => res.json())
       .then((data) => {
         const count = data.count;
@@ -83,8 +85,8 @@ const Shop = () => {
         {[...Array(pageCount).keys()].map((number) => (
           <button
             key={number + 1}
-            className={page === number + 1 ? 'selected' : ''}
-            onClick={() => setPage(number + 1)}
+            className={page === number ? 'selected' : ''}
+            onClick={() => setPage(number)}
           >
             {number + 1}
           </button>
